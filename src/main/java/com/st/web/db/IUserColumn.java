@@ -11,10 +11,4 @@ public interface IUserColumn extends ISuperColumn
 	public static final String	user_name			= "user_name";
 
 	public static final String	password			= "password";
-	
-	public static final String  email				= "email";
-	
-	public static final String	phone_no			= "phone_no";
-	
-	public static final String	wechat				= "wechat";
 }
