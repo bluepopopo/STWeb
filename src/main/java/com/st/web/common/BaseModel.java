@@ -1,26 +1,21 @@
-/*
- * @(#) BaseModel.java 2014-11-11 下午10:14:53
- *
- * Copyright 2014 Fab Connector, Inc. All rights reserved.
- * Fab Connector PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
- */package com.fabconnector.common;
+package com.st.web.common;
 
 import java.util.Date;
 
-import com.fabconnector.common.dbobject.column.ISuperColumn;
-import com.fabconnector.common.dbobject.column.configuration.IUserColumn;
-import com.fabconnector.model.usermgmt.UserModel;
-import com.fabconnector.util.ThreadLocalHelper;
 import com.jfinal.log.Logger;
 import com.jfinal.plugin.activerecord.Model;
+import com.st.web.db.ISuperColumn;
+import com.st.web.db.IUserColumn;
+import com.st.web.model.UserModel;
+import com.st.web.util.ThreadLocalHelper;
 
 @SuppressWarnings("rawtypes")
 public class BaseModel<M extends BaseModel> extends Model<M>
 {
 	private static final long	serialVersionUID	= 1L;
 
-	protected Logger logger = Logger.getLogger(this.getClass());
-	
+	protected Logger			logger				= Logger.getLogger(this.getClass());
+
 	@Override
 	public boolean save()
 	{
