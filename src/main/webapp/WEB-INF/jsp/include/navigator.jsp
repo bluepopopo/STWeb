@@ -6,8 +6,7 @@
 	<div class="navbar-header">
 		<table>
 			<tr>
-				<td><a class="navbar-brand" href="/">苏州西博流体控制设备有限公司</a></td>
-				<td><a class="navbar-brand " href="/about">关于西博</a></td>
+
 			</tr>
 		</table>
 
