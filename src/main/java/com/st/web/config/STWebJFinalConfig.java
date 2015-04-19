@@ -109,16 +109,16 @@ public class STWebJFinalConfig extends JFinalConfig
 
 	}
 
-	/**
-	 * 寤鸿浣跨敤 JFinal 鎵嬪唽鎺ㄨ崘鐨勬柟寮忓惎鍔ㄩ」鐩�杩愯姝�main
-	 * 鏂规硶鍙互鍚姩椤圭洰锛屾main鏂规硶鍙互鏀剧疆鍦ㄤ换鎰忕殑Class绫诲畾涔変腑锛屼笉涓�畾瑕佹斁浜庢
-	 */
-	public static void main(String[] args)
-	{
-		JFinal.start(
-			"target/stweb-0.1",
-			8081,
-			"/stweb",
-			5);
-	}
+//	/**
+//	 * 寤鸿浣跨敤 JFinal 鎵嬪唽鎺ㄨ崘鐨勬柟寮忓惎鍔ㄩ」鐩�杩愯姝�main
+//	 * 鏂规硶鍙互鍚姩椤圭洰锛屾main鏂规硶鍙互鏀剧疆鍦ㄤ换鎰忕殑Class绫诲畾涔変腑锛屼笉涓�畾瑕佹斁浜庢
+//	 */
+//	public static void main(String[] args)
+//	{
+//		JFinal.start(
+//			"target/stweb-0.1",
+//			8081,
+//			"/stweb",
+//			5);
+//	}
 }
