@@ -2,8 +2,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>STWeb-Group</groupId>
-	<artifactId>STWeb-Artifact</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>stweb</artifactId>
+	<version>0.1</version>
 	<packaging>war</packaging>
 	<name>STWeb</name>
 	<description>Shawn's web blog application</description>
@@ -34,6 +34,24 @@
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
 			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.30</version>
+		</dependency>
+
+		<dependency>
+			<groupId>c3p0</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>0.9.1.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>javax.el-api</artifactId>
+			<version>3.0.1-b04</version>
 		</dependency>
 
 	</dependencies>

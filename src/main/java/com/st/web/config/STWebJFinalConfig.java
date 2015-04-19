@@ -30,7 +30,6 @@ public class STWebJFinalConfig extends JFinalConfig
 	{
 		// 鍔犺浇灏戦噺蹇呰閰嶇疆锛岄殢鍚庡彲鐢╣etProperty(...)鑾峰彇鍊�
 		loadPropertyFile("stweb_config.properties");
-
 		me.setDevMode(getPropertyToBoolean(
 			"devMode",
 			false));
@@ -117,7 +116,7 @@ public class STWebJFinalConfig extends JFinalConfig
 	public static void main(String[] args)
 	{
 		JFinal.start(
-			"webapp",
+			"target/stweb-0.1",
 			8081,
 			"/stweb",
 			5);
