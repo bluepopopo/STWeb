@@ -26,11 +26,12 @@ create table user
     last_update_date datetime
   ) ;
 
--- create article table
-create table article
+-- create post table
+create table post
   (
     id            	 integer not null primary key auto_increment,
     title          	 varchar (500) not null ,
+    short_desc       varchar (500) not null ,
     content          text ,
     create_by        integer,
     creation_date    datetime,

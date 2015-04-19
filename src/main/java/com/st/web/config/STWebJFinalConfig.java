@@ -6,14 +6,13 @@ import com.jfinal.config.Interceptors;
 import com.jfinal.config.JFinalConfig;
 import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
-import com.jfinal.core.JFinal;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.activerecord.CaseInsensitiveContainerFactory;
 import com.jfinal.plugin.activerecord.dialect.MysqlDialect;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
 import com.jfinal.render.ViewType;
-import com.st.web.controller.IndexController;
-import com.st.web.controller.PageController;
+import com.st.web.controller.ForwardController;
+import com.st.web.controller.UserController;
 
 public class STWebJFinalConfig extends JFinalConfig
 {
@@ -47,13 +46,12 @@ public class STWebJFinalConfig extends JFinalConfig
 	@Override
 	public void configRoute(Routes me)
 	{
-		// common
-		me.add(
-			"/login",
-			IndexController.class);
 		me.add(
 			"/",
-			PageController.class);
+			ForwardController.class);
+		me.add(
+			"/user",
+			UserController.class);		
 	}
 
 	/*

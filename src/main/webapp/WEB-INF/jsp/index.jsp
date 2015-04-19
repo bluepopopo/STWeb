@@ -2,68 +2,94 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <html>
+<head>
+</head>
 
 <body>
-
-	<div class="container">
-		<div class="row clearfix">
-			<div class="col-md-12 column">
-
-				<!-- navigator -->
-				<div>
-					<div><br></div>
-					<jsp:include page="../jsp/include/navigator.jsp" flush="true"/>
-				</div>
-
-				<div class="carousel slide" id="carousel-31486">
-					<ol class="carousel-indicators">
-						<li class="active" data-slide-to="0" data-target="#carousel-31486">
-						</li>
-						<li data-slide-to="1" data-target="#carousel-31486"></li>
-					</ol>
-					<div class="carousel-inner">
-						<div class="item active">
-							<img alt="" src="http://7xidoc.com1.z0.glb.clouddn.com/logo.png"
-								width="100%" />
-							<div class="carousel-caption">
-								<h1>SIBOVALVE</h1>
-								<h2>未来无限可能<h2>
-							</div>
-						</div>
-						<div class="item">
-							<img alt=""
-								src="http://7xidoc.com1.z0.glb.clouddn.com/desc14.png"
-								width="100%" />
-							<div class="carousel-caption">
-								<h1>SIBOVALVE</h1>
-								<h2>专业  · 专注  · 极致<h2>
-							</div>
-						</div>
+	<!-- navigator -->
+	<jsp:include page="../jsp/include/navigator.jsp" flush="true" />
+	
+	<!-- Page Header -->
+	<!-- Set your background image for this header on the line below. -->
+	<header class="intro-header"
+		style="background-image: url('img/home-bg.jpg')">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+					<div class="site-heading">
+						<h1>Clean Blog</h1>
+						<hr class="small">
+						<span class="subheading">A Clean Blog Theme by Start
+							Bootstrap</span>
 					</div>
-					<a class="left carousel-control" href="#carousel-31486"
-						data-slide="prev"><span
-						class="glyphicon glyphicon-chevron-left"></span></a> <a
-						class="right carousel-control" href="#carousel-31486"
-						data-slide="next"><span
-						class="glyphicon glyphicon-chevron-right"></span></a>
 				</div>
+			</div>
+		</div>
+	</header>
 
-				<div><br></div>
-				<div class="jumbotron">
-					<h1>非常抱歉，网站正在维护！</h1>
+	<!-- Main Content -->
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<div class="post-preview">
+					<a href="<%=webContextPath%>/post">
+						<h2 class="post-title">Man must explore, and this is
+							exploration at its greatest</h2>
+						<h3 class="post-subtitle">Problems look mighty small from 150
+							miles up</h3>
+					</a>
+					<p class="post-meta">
+						Posted by <a href="#">Start Bootstrap</a> on September 24, 2014
+					</p>
 				</div>
-									
-				<!-- footer -->
-				<div>
-					<div><br></div>
-					<jsp:include page="../jsp/include/footer.jsp" flush="true"/>
+				<hr>
+				<div class="post-preview">
+					<a href="<%=webContextPath%>/post">
+						<h2 class="post-title">I believe every human has a finite
+							number of heartbeats. I don't intend to waste any of mine.</h2>
+					</a>
+					<p class="post-meta">
+						Posted by <a href="#">Start Bootstrap</a> on September 18, 2014
+					</p>
 				</div>
-				
+				<hr>
+				<div class="post-preview">
+					<a href="<%=webContextPath%>/post">
+						<h2 class="post-title">Science has not yet mastered prophecy
+						</h2>
+						<h3 class="post-subtitle">We predict too much for the next
+							year and yet far too little for the next ten.</h3>
+					</a>
+					<p class="post-meta">
+						Posted by <a href="#">Start Bootstrap</a> on August 24, 2014
+					</p>
+				</div>
+				<hr>
+				<div class="post-preview">
+					<a href="<%=webContextPath%>/post">
+						<h2 class="post-title">Failure is not an option</h2>
+						<h3 class="post-subtitle">Many say exploration is part of our
+							destiny, but itâs actually our duty to future generations.</h3>
+					</a>
+					<p class="post-meta">
+						Posted by <a href="#">Start Bootstrap</a> on July 8, 2014
+					</p>
+				</div>
+				<hr>
+				<!-- Pager -->
+				<ul class="pager">
+					<li class="next"><a href="#">Older Posts &rarr;</a></li>
+				</ul>
 			</div>
 		</div>
 	</div>
 
+	<hr>
 
+	<!-- Footer -->
+	<footer>
+		<jsp:include page="../jsp/include/footer.jsp" flush="true" />
+	</footer>
 </body>
 
 </html>
