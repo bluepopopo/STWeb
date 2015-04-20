@@ -12,6 +12,7 @@ import com.jfinal.plugin.activerecord.dialect.MysqlDialect;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
 import com.jfinal.render.ViewType;
 import com.st.web.controller.ForwardController;
+import com.st.web.controller.PostController;
 import com.st.web.controller.UserController;
 import com.st.web.model.DBConstants;
 import com.st.web.model.UserModel;
@@ -54,6 +55,9 @@ public class STWebJFinalConfig extends JFinalConfig
 		me.add(
 			"/user",
 			UserController.class);		
+		me.add(
+			"/post",
+			PostController.class);				
 	}
 
 	/*

@@ -6,11 +6,16 @@
 
 import com.st.web.common.BaseController;
 
-public class PostContent extends BaseController
+public class PostController extends BaseController
 {
 	public void addPost()
 	{
-		
+		this.renderJsp("/WEB-INF/jsp/post/addpost.jsp");
+	}
+	
+	public void viewPost()
+	{
+		this.renderJsp("/WEB-INF/jsp/post.jsp");
 	}
 	
 	public void editPost()

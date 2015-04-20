@@ -8,11 +8,6 @@ public class ForwardController extends Controller
 	{
 		this.renderJsp("/WEB-INF/jsp/index.jsp");
 	}
-
-	public void post()
-	{
-		this.renderJsp("/WEB-INF/jsp/post.jsp");
-	}
 	
 	public void about()
 	{

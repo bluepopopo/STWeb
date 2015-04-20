@@ -22,7 +22,7 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="<%=webContextPath%>/">Home</a></li>
 				<li><a href="<%=webContextPath%>/about">About</a></li>
-				<li><a href="<%=webContextPath%>/post">Sample Post</a></li>
+				<li><a href="<%=webContextPath%>/post/viewPost">Sample Post</a></li>
 				<li><a href="<%=webContextPath%>/contact">Contact</a></li>
 			</ul>
 		</div>

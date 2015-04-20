@@ -23,6 +23,7 @@ public class UserController extends BaseController
 	{
 		UserModel user = this.getModel(UserModel.class);
 		user.verifiedByNameAndPassword();
+		// store the user object into session
 		this.getSession().setAttribute(WebConstant.USER, user);
 		this.renderJsp("/WEB-INF/jsp/index.jsp");
 	}
