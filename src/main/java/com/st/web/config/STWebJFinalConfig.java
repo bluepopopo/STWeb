@@ -13,6 +13,8 @@ import com.jfinal.plugin.c3p0.C3p0Plugin;
 import com.jfinal.render.ViewType;
 import com.st.web.controller.ForwardController;
 import com.st.web.controller.UserController;
+import com.st.web.model.DBConstants;
+import com.st.web.model.UserModel;
 
 public class STWebJFinalConfig extends JFinalConfig
 {
@@ -76,6 +78,14 @@ public class STWebJFinalConfig extends JFinalConfig
 		arp.setDialect(new MysqlDialect());
 
 		me.add(arp);
+		
+		/**
+		 * Configuration model
+		 */
+		arp.addMapping(
+			DBConstants.TABLE_USER,
+			UserModel.class);
+		
 	}
 
 	/*

@@ -3,9 +3,11 @@ package com.st.web.common;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
 import com.jfinal.log.Logger;
 import com.jfinal.plugin.activerecord.Model;
+import com.st.web.interceptor.SessionInterceptor;
 import com.st.web.model.UserModel;
 
 /**
@@ -15,7 +17,7 @@ import com.st.web.model.UserModel;
  * 
  * @author Shawn Tao, Aug 12, 2014 10:13:57 PM
  */
-// @Before(SessionInterceptor.class)
+@Before(SessionInterceptor.class)
 public class BaseController extends Controller
 {
 	protected static Logger	logger	= Logger.getLogger(BaseController.class);

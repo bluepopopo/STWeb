@@ -21,9 +21,10 @@ public class UserController extends BaseController
 	
 	public void login()
 	{
-		UserModel user = new UserModel();
+		UserModel user = this.getModel(UserModel.class);
 		user.verifiedByNameAndPassword();
 		this.getSession().setAttribute(WebConstant.USER, user);
+		this.renderJsp("/WEB-INF/jsp/index.jsp");
 	}
 	
 	public void logout()

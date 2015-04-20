@@ -32,12 +32,12 @@
 				<!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
 				<!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
 				<!-- NOTE: To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
-				<form name="sentMessage" id="contactForm" novalidate>
+				<form name="sentMessage" id="contactForm" novalidate >
 					<div class="row control-group">
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
 							<label>Name</label> <input type="text" class="form-control"
-								placeholder="Name" id="User name" required
+								placeholder="Name" id="username" required
 								data-validation-required-message="Please enter user name.">
 							<p class="help-block text-danger"></p>
 						</div>
@@ -61,9 +61,14 @@
 					</div>
 					<div class="row">
 						<div class="form-group col-xs-12">
-							<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
+							<button class="btn btn-lg btn-primary btn-block" type="button" onclick="submitButton()">Sign
 								in</button>
 						</div>
+						
+						<div class="form-group col-xs-12">
+							<font color="red"><label id="error"></label></font>
+						</div>						
+						
 					</div>
 				</form>
 			</div>
@@ -77,6 +82,24 @@
 		<jsp:include page="../../jsp/include/footer.jsp" flush="true" />
 	</footer>
 
+	<script type="text/javascript">
+		function submitButton()
+		{
+			$("#error").html("");
+			
+			var data = {
+					"userModel.user_name" : $("#username").val(),
+					"userModel.password" : $("#password").val()
+				};
+			$.post('<%=webContextPath%>/user/login', data, function(data) {
+				if (data.error) {
+					$("#error").html(data.error);				
+				} else {
+					document.location = "<%=webContextPath%>/";
+				}
+			}); 			
+		}
+	</script>
 </body>
 
 </html>

@@ -49,4 +49,10 @@ create table comment
     last_update_by   integer,
     last_update_date datetime
   ) ;
+ 
+-- prepare data
+insert into user(user_name, password)
+values ('admin', 'admin');
+
+commit; 
   

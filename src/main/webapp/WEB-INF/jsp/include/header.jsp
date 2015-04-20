@@ -20,7 +20,7 @@
 <!-- Custom CSS -->
 <link href="<%=webContextPath%>/css/clean-blog.min.css" rel="stylesheet">
 
-<link href="//libs.baidu.com/fontawesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+<link href="http://libs.baidu.com/fontawesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 
 <style type="text/css">
 body, button, input, select, textarea, h1, h2, h3, h4, h5, h6 {
