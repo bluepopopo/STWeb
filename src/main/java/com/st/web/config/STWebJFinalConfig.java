@@ -15,6 +15,7 @@ import com.st.web.controller.ForwardController;
 import com.st.web.controller.PostController;
 import com.st.web.controller.UserController;
 import com.st.web.model.DBConstants;
+import com.st.web.model.PostModel;
 import com.st.web.model.UserModel;
 
 public class STWebJFinalConfig extends JFinalConfig
@@ -89,7 +90,9 @@ public class STWebJFinalConfig extends JFinalConfig
 		arp.addMapping(
 			DBConstants.TABLE_USER,
 			UserModel.class);
-		
+		arp.addMapping(
+			DBConstants.TABLE_POST,
+			PostModel.class);		
 	}
 
 	/*

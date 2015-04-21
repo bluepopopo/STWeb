@@ -11,7 +11,7 @@ use stweb;
 
 -- drop table
 drop table if exists user;
-drop table if exists article;
+drop table if exists post;
 drop table if exists comment;
 
 -- create user table
@@ -31,7 +31,7 @@ create table post
   (
     id            	 integer not null primary key auto_increment,
     title          	 varchar (500) not null ,
-    short_desc       varchar (500) not null ,
+    short_desc       varchar (500) ,
     content          text ,
     create_by        integer,
     creation_date    datetime,

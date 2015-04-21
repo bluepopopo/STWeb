@@ -20,32 +20,47 @@ public class BaseModel<M extends BaseModel> extends Model<M>
 	public boolean save()
 	{
 		UserModel model = ThreadLocalHelper.getInstanse().getUser();
-		String userId = model.getInt(IUserColumn.user_id) + "";
-		/**
-		 * Populate common filed of create by and creation date
-		 */
-		this.set(
-			ISuperColumn.create_by,
-			userId);
-		this.set(
-			ISuperColumn.creation_date,
-			new java.sql.Date(new Date().getTime()));
+
+		if (model == null)
+		{
+
+		}
+		else
+		{
+			String userId = model.getInt(IUserColumn.user_id) + "";
+			/**
+			 * Populate common filed of create by and creation date
+			 */
+			this.set(
+				ISuperColumn.create_by,
+				userId);
+			this.set(
+				ISuperColumn.creation_date,
+				new java.sql.Date(new Date().getTime()));
+		}
 		return super.save();
 	}
 
 	public boolean update()
 	{
 		UserModel model = ThreadLocalHelper.getInstanse().getUser();
-		String userId = model.getInt(IUserColumn.user_id) + "";
-		/**
-		 * Populate common filed of last update by and last update date
-		 */
-		this.set(
-			ISuperColumn.last_update_by,
-			userId);
-		this.set(
-			ISuperColumn.last_update_date,
-			new java.sql.Date(new Date().getTime()));
+		if (model == null)
+		{
+
+		}
+		else
+		{
+			String userId = model.getInt(IUserColumn.user_id) + "";
+			/**
+			 * Populate common filed of last update by and last update date
+			 */
+			this.set(
+				ISuperColumn.last_update_by,
+				userId);
+			this.set(
+				ISuperColumn.last_update_date,
+				new java.sql.Date(new Date().getTime()));
+		}
 		return super.update();
 	}
 }

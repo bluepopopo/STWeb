@@ -8,5 +8,6 @@ public interface DBConstants
 {
 
 	public String	TABLE_USER	= "USER";
+	public String	TABLE_POST	= "POST";
 
 }

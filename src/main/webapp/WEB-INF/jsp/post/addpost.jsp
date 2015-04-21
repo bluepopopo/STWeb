@@ -3,6 +3,41 @@
 	pageEncoding="UTF-8"%>
 <html>
 <head>
+
+<link rel="stylesheet"
+	href="<%=webContextPath%>/js/kindeditor/themes/default/default.css" />
+<link rel="stylesheet"
+	href="<%=webContextPath%>/js/kindeditor/plugins/code/prettify.css" />
+<script charset="utf-8"
+	src="<%=webContextPath%>/js/kindeditor/kindeditor.js"></script>
+<script charset="utf-8"
+	src="<%=webContextPath%>/js/kindeditor/lang/zh_CN.js"></script>
+<script charset="utf-8"
+	src="<%=webContextPath%>/js/kindeditor/plugins/code/prettify.js"></script>
+
+<script>
+	KindEditor.ready(function(K) {
+		window.editor = K.create('#editor_id');
+	});
+
+	function addNewPost() {		
+		editor.sync();
+		html = $('#editor_id').val(); // jQuery
+
+		var data = {
+				"postModel.title" : $('#title').val(),
+				"postModel.content" : html
+			};
+		$.post('<%=webContextPath%>/post/save', data, function(data) {
+			if (data.error) {
+				$("#error").html(data.error);				
+			} else {
+				document.location = "<%=webContextPath%>/";
+			}
+		}); 
+		
+	}
+</script>
 </head>
 
 <body>
@@ -18,7 +53,7 @@
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 					<div class="page-heading">
-						<h1>Please login</h1>
+						<h1>Add a new post</h1>
 					</div>
 				</div>
 			</div>
@@ -29,7 +64,34 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-				
+				<form name="sentMessage" id="contactForm" novalidate>
+
+					<div class="row control-group">
+						<div
+							class="form-group col-xs-12 floating-label-form-group controls">
+							<label>Title</label> <input type="text" class="form-control"
+								placeholder="Title" id="title" required
+								data-validation-required-message="Please enter title.">
+							<p class="help-block text-danger"></p>
+						</div>
+					</div>
+
+					<div class="row control-group">
+						<div
+							class="form-group col-xs-12 floating-label-form-group controls">
+							<textarea id="editor_id" name="content"
+								style="width: 750px; height: 300px;"></textarea>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="form-group col-xs-12">
+							<button class="btn btn-primary btn-block" type="button"
+								onclick="addNewPost()">Add a new post</button>
+						</div>
+
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -40,25 +102,6 @@
 	<footer>
 		<jsp:include page="../../jsp/include/footer.jsp" flush="true" />
 	</footer>
-
-	<script type="text/javascript">
-		function submitButton()
-		{
-			$("#error").html("");
-			
-			var data = {
-					"userModel.user_name" : $("#username").val(),
-					"userModel.password" : $("#password").val()
-				};
-			$.post('<%=webContextPath%>/user/login', data, function(data) {
-				if (data.error) {
-					$("#error").html(data.error);				
-				} else {
-					document.location = "<%=webContextPath%>/";
-				}
-			});
-		}
-	</script>
 </body>
 
 </html>

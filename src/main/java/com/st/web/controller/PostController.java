@@ -5,6 +5,7 @@
  */package com.st.web.controller;
 
 import com.st.web.common.BaseController;
+import com.st.web.model.PostModel;
 
 public class PostController extends BaseController
 {
@@ -18,9 +19,13 @@ public class PostController extends BaseController
 		this.renderJsp("/WEB-INF/jsp/post.jsp");
 	}
 	
-	public void editPost()
+	public void save()
 	{
+		PostModel model = this.getModel(PostModel.class);
 		
+		model.save();
+		
+		this.renderJsp("/WEB-INF/jsp/index.jsp");
 	}
 	
 	public void deletePost()
