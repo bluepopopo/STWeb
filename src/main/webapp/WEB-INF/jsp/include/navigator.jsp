@@ -2,6 +2,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<%
+	// check if admin user is logged in
+	UserModel user = (UserModel)request.getSession().getValue(WebConstant.USER);
+	Boolean isLoggedIn = false;	
+	if (user != null)
+	{
+		isLoggedIn = true;
+	}
+%>
+
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
 	<div class="container-fluid">
@@ -14,6 +24,15 @@
 					class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="<%=webContextPath%>/">STWeb Blogger</a>
+			<%
+				if (isLoggedIn)
+				{
+			%>
+			</br>
+			<a class="navbar-brand" href="#">[<%=user.getUserName()%>] already logged in</a>
+			<%
+				}
+			%>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -23,7 +42,15 @@
 				<li><a href="<%=webContextPath%>/">Home</a></li>
 				<li><a href="<%=webContextPath%>/about">About</a></li>
 				<li><a href="<%=webContextPath%>/post/viewPost">Sample Post</a></li>
-				<li><a href="<%=webContextPath%>/contact">Contact</a></li>
+				<li><a href="<%=webContextPath%>/contact">Contact</a></li>				
+			<%
+				if (isLoggedIn)
+				{
+			%>
+			<li><a href="<%=webContextPath%>/post/addPost">Add New Post</a></li>
+			<%
+				}
+			%>				
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->

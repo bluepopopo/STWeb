@@ -35,7 +35,7 @@ public class PostController extends BaseController
 	
 	public void getAllPosts()
 	{
-		
+
 	}
 	
 	public void getOnePost()

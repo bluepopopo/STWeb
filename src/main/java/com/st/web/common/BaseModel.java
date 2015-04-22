@@ -63,4 +63,24 @@ public class BaseModel<M extends BaseModel> extends Model<M>
 		}
 		return super.update();
 	}
+
+	public String getCreateBy()
+	{
+		return this.getStr(ISuperColumn.create_by);
+	}
+
+	public String getCeationDate()
+	{
+		return this.getStr(ISuperColumn.creation_date);
+	}
+
+	public String getLastUpdateBy()
+	{
+		return this.getStr(ISuperColumn.last_update_by);
+	}
+
+	public String getLastUpdateDate()
+	{
+		return this.getStr(ISuperColumn.last_update_date);
+	}
 }

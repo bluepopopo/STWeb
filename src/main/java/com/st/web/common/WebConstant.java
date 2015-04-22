@@ -7,6 +7,8 @@
 public interface WebConstant
 {
 
-	public String	USER	= "USER";
+	public String	USER		= "USER";
+	
+	public String   ALL_POSTS	= "ALL_POSTS";
 
 }
