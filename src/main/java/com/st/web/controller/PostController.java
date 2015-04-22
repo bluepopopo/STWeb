@@ -5,6 +5,8 @@
  */package com.st.web.controller;
 
 import com.st.web.common.BaseController;
+import com.st.web.common.WebConstant;
+import com.st.web.model.DBConstants;
 import com.st.web.model.PostModel;
 
 public class PostController extends BaseController
@@ -40,6 +42,15 @@ public class PostController extends BaseController
 	
 	public void getOnePost()
 	{
+		String id = this.getRequest().getParameter("id");
 		
+		PostModel post = new PostModel();
+		post.findById(id);
+		
+		this.getRequest().setAttribute(
+			WebConstant.ONE_POST,
+			post);
+		
+		this.renderJsp("/WEB-INF/jsp/post.jsp");
 	}
 }

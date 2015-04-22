@@ -55,7 +55,7 @@
 					{
 				%>
 					<div class="post-preview">
-						<a href="<%=webContextPath%>/post">
+						<a href="<%=webContextPath%>/post/getOnePost?id=<%=post.getId()%>">
 							<h2 class="post-title"><%=post.getTitle() %></h2>
 							<h3 class="post-subtitle"><%=post.getContent() %></h3>
 						</a>

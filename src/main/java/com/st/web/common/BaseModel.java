@@ -64,6 +64,13 @@ public class BaseModel<M extends BaseModel> extends Model<M>
 		return super.update();
 	}
 
+	// common attribute
+	
+	public int getId()
+	{
+		return this.getInt("id");
+	}
+	
 	public String getCreateBy()
 	{
 		return this.getStr(ISuperColumn.create_by);

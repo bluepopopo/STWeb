@@ -11,4 +11,6 @@ public interface WebConstant
 	
 	public String   ALL_POSTS	= "ALL_POSTS";
 
+	public String	ONE_POST	= "ONE_POST";
+
 }
