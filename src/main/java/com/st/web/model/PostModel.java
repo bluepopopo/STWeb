@@ -22,7 +22,7 @@ public class PostModel extends BaseModel<PostModel> implements IPostColumn
 	 */
 	private static final long	serialVersionUID	= 1L;
 	
-	private static PostModel dao = new PostModel();
+	public static PostModel dao = new PostModel();
 	
 	/**
 	 * 

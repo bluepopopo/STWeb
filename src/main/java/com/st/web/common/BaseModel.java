@@ -65,7 +65,6 @@ public class BaseModel<M extends BaseModel> extends Model<M>
 	}
 
 	// common attribute
-	
 	public int getId()
 	{
 		return this.getInt("id");

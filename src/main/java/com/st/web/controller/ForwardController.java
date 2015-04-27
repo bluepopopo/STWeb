@@ -10,6 +10,9 @@ public class ForwardController extends Controller
 {
 	public void index()
 	{
+		/**
+		 * List all posts by default.
+		 */
 		PostModel postModel = new PostModel();
 		List<PostModel> posts = postModel.getAllPosts();
 		this.getRequest().setAttribute(

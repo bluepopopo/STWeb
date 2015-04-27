@@ -3,6 +3,21 @@
 	pageEncoding="UTF-8"%>
 <html>
 <head>
+	<script type="text/javascript">
+		/**
+		* Go to edit post.
+		*/
+		function editButton(id)
+		{
+			var url = "<%=webContextPath%>/post/editPost?id="+id;
+			location.href=url;	
+		}
+		
+		function deleteButton(id)
+		{
+			//TODO
+		}
+	</script>
 </head>
 
 <body>
@@ -42,13 +57,17 @@
 				{					
 				%>
 					<div class="post-preview">
-						<a href="<%=webContextPath%>/post/getOnePost?id="<%=post.getId()%>>
-							<h2 class="post-title"><%=post.getTitle() %></h2>
-							<h3 class="post-subtitle"><%=post.getContent() %></h3>
-						</a>
+						<h2 class="post-title"><%=post.getTitle() %></h2>
+						
+						<button class="btn btn-small btn-primary btn-block" type="button" onclick="editButton('<%=post.getId() %>')">
+						Edit</button>
+						<button class="btn btn-small btn-primary btn-block" type="button" onclick="deleteButton('<%=post.getId() %>')">
+						Delete</button>						
+								
+						<h3 class="post-subtitle"><%=post.getContent() %></h3>
 						<p class="post-meta">
 							Posted by <a href="#"><%=post.getCreateBy()%></a> on <%=post.getCreateBy() %>
-						</p>
+						</p>						
 					</div>
 					<hr>					
 				<%

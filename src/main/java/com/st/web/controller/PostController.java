@@ -6,51 +6,92 @@
 
 import com.st.web.common.BaseController;
 import com.st.web.common.WebConstant;
-import com.st.web.model.DBConstants;
 import com.st.web.model.PostModel;
 
 public class PostController extends BaseController
 {
+	/**
+	 * View activity.
+	 */
 	public void addPost()
 	{
 		this.renderJsp("/WEB-INF/jsp/post/addpost.jsp");
 	}
-	
+
+	/**
+	 * View activity.
+	 */
 	public void viewPost()
 	{
 		this.renderJsp("/WEB-INF/jsp/post.jsp");
 	}
-	
-	public void save()
-	{
-		PostModel model = this.getModel(PostModel.class);
-		
-		model.save();
-		
-		this.renderJsp("/WEB-INF/jsp/index.jsp");
-	}
-	
-	public void deletePost()
-	{
-		
-	}
-	
-	public void getAllPosts()
-	{
 
-	}
-	
-	public void getOnePost()
+	/**
+	 * View activity.
+	 */
+	public void editPost()
 	{
-		String id = this.getRequest().getParameter("id");
-		
-		PostModel post = new PostModel();
-		post.findById(id);
-		
+		String id = this.getRequest().getParameter(
+			"id");
+
+		PostModel post = PostModel.dao.findById(id);
+
 		this.getRequest().setAttribute(
 			WebConstant.ONE_POST,
 			post);
-		
+		this.renderJsp("/WEB-INF/jsp/post/editpost.jsp");
+	}
+
+	/**
+	 * Transaction activity.
+	 */
+	public void save()
+	{
+		PostModel model = this.getModel(PostModel.class);
+
+		model.save();
+
+		this.renderJsp("/WEB-INF/jsp/index.jsp");
+	}
+
+	/**
+	 * Transaction activity.
+	 */
+	public void update()
+	{
+		PostModel model = this.getModel(PostModel.class);
+
+		model.update();
+
+		this.renderJsp("/WEB-INF/jsp/index.jsp");
+	}
+
+	/**
+	 * Transaction activity.
+	 */
+	public void deletePost()
+	{
+		PostModel model = this.getModel(PostModel.class);
+
+		model.delete();
+
+		this.renderJsp("/WEB-INF/jsp/index.jsp");
+	}
+
+	/**
+	 * Show one post by given id.
+	 */
+	public void getOnePost()
+	{
+		String id = this.getRequest().getParameter(
+			"id");
+
+		PostModel post = PostModel.dao.findById(id);
+
+		this.getRequest().setAttribute(
+			WebConstant.ONE_POST,
+			post);
+
 		this.renderJsp("/WEB-INF/jsp/post.jsp");
 	}
 }

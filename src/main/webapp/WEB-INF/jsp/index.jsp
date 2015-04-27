@@ -57,8 +57,9 @@
 					<div class="post-preview">
 						<a href="<%=webContextPath%>/post/getOnePost?id=<%=post.getId()%>">
 							<h2 class="post-title"><%=post.getTitle() %></h2>
-							<h3 class="post-subtitle"><%=post.getContent() %></h3>
 						</a>
+						<h3 class="post-subtitle"><%=post.getContent() %></h3>
+						
 						<p class="post-meta">
 							Posted by <a href="#"><%=post.getCreateBy()%></a> on <%=post.getCreateBy() %>
 						</p>
