@@ -36,7 +36,10 @@
 				document.location = "<%=webContextPath%>/";
 			}
 		}); 
-		
+	}
+	
+	function cancelButton(){
+		window.history.back();	
 	}
 </script>
 </head>
@@ -97,8 +100,19 @@
 
 					<div class="row">
 						<div class="form-group col-xs-12">
-							<button class="btn btn-primary btn-block" type="button"
-								onclick="submitButton()">Update</button>
+							<table>
+								<tr>
+									<td>						
+										<button class="btn btn-success btn-block" type="button"	onclick="submitButton()">Update</button>
+									</td>
+									<td>
+										&nbsp;
+									</td>
+									<td>
+										<button class="btn btn-default btn-block" type="button"	onclick="cancelButton()">Cancel</button>
+									</td>
+								</tr>	
+							</table>
 						</div>						
 					</div>
 					

@@ -24,14 +24,17 @@ public class PostModel extends BaseModel<PostModel> implements IPostColumn
 	
 	public static PostModel dao = new PostModel();
 	
+	private String sqlText = "select p.*, u.user_name from "+DBConstants.TABLE_POST
+						   +" p left join "+DBConstants.TABLE_USER+" u on p.create_by= u.id";
+				 
+	
 	/**
 	 * 
 	 * @return all post object
 	 */
 	public List<PostModel> getAllPosts()
 	{
-		String sql = "select * from "+DBConstants.TABLE_POST;		
-		List<PostModel> posts = dao.find(sql);	
+		List<PostModel> posts = dao.find(sqlText);
 		return posts;
 	}
 	
@@ -43,5 +46,13 @@ public class PostModel extends BaseModel<PostModel> implements IPostColumn
 	public String getContent()
 	{
 		return this.getStr(content);
+	}
+	
+	/**
+	 * Find model by id.
+	 * @param id the id value of the model
+	 */
+	public PostModel findById(Object id) {
+		return dao.findFirst(sqlText+" where p.id="+id);
 	}
 }

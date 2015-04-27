@@ -18,6 +18,11 @@ public class ThreadLocalHelper
 		return local;
 	}
 
+	public void removeUser()
+	{
+		userLocal.remove();
+	}
+	
 	public void addUser(UserModel user)
 	{
 		userLocal.set(user);

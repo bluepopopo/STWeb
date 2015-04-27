@@ -8,6 +8,9 @@ import com.jfinal.aop.Interceptor;
 import com.jfinal.core.ActionInvocation;
 import com.jfinal.log.Logger;
 import com.jfinal.plugin.activerecord.NestedTransactionHelpException;
+import com.st.web.common.WebConstant;
+import com.st.web.model.UserModel;
+import com.st.web.util.ThreadLocalHelper;
 
 public class SessionInterceptor implements Interceptor
 {
@@ -45,6 +48,10 @@ public class SessionInterceptor implements Interceptor
 		boolean isAjax = "XMLHttpRequest".equalsIgnoreCase(header);
 		try
 		{
+			UserModel user = (UserModel)request.getSession().getAttribute(WebConstant.USER);
+			ThreadLocalHelper.getInstanse().addUser(
+				user);
+			
 			ai.invoke();
 		}
 		catch (Exception e)

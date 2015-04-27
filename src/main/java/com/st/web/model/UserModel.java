@@ -46,6 +46,6 @@ public class UserModel extends BaseModel<UserModel> implements IUserColumn
 
 	public Integer getUserId()
 	{
-		return getInt(user_id);
+		return getInt(id);
 	}
 }

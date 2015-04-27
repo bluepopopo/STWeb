@@ -6,6 +6,7 @@
 
 import com.st.web.common.BaseController;
 import com.st.web.common.WebConstant;
+import com.st.web.model.DBConstants;
 import com.st.web.model.PostModel;
 
 public class PostController extends BaseController
@@ -69,7 +70,7 @@ public class PostController extends BaseController
 	/**
 	 * Transaction activity.
 	 */
-	public void deletePost()
+	public void delete()
 	{
 		PostModel model = this.getModel(PostModel.class);
 

@@ -10,6 +10,16 @@
  // web context path
  String webContextPath = request.getContextPath();
 %>
+
+<%
+	// check if admin user is logged in
+	UserModel user = (UserModel)request.getSession().getValue(WebConstant.USER);
+	Boolean isLoggedIn = false;	
+	if (user != null)
+	{
+		isLoggedIn = true;
+	}
+%>
 	
 <head>
 <meta charset="utf-8">

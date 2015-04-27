@@ -61,8 +61,16 @@
 					</div>
 					<div class="row">
 						<div class="form-group col-xs-12">
-							<button class="btn btn-lg btn-primary btn-block" type="button" onclick="submitButton()">Sign
-								in</button>
+							<table>
+								<tr>
+									<td></td>
+									<td></td>
+									<td>
+										<button class="btn btn-lg btn-success" type="button" onclick="submitButton()">Sign in</button>									
+									</td>
+								</tr>
+							</table>
+
 						</div>
 						
 						<div class="form-group col-xs-12">

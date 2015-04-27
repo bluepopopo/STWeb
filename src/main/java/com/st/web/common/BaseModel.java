@@ -5,7 +5,6 @@ import java.util.Date;
 import com.jfinal.log.Logger;
 import com.jfinal.plugin.activerecord.Model;
 import com.st.web.db.ISuperColumn;
-import com.st.web.db.IUserColumn;
 import com.st.web.model.UserModel;
 import com.st.web.util.ThreadLocalHelper;
 
@@ -27,7 +26,7 @@ public class BaseModel<M extends BaseModel> extends Model<M>
 		}
 		else
 		{
-			String userId = model.getInt(IUserColumn.user_id) + "";
+			Integer userId = model.getUserId();
 			/**
 			 * Populate common filed of create by and creation date
 			 */
@@ -50,7 +49,7 @@ public class BaseModel<M extends BaseModel> extends Model<M>
 		}
 		else
 		{
-			String userId = model.getInt(IUserColumn.user_id) + "";
+			Integer userId = model.getUserId();
 			/**
 			 * Populate common filed of last update by and last update date
 			 */

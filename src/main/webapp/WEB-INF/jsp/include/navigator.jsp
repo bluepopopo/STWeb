@@ -2,16 +2,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<%
-	// check if admin user is logged in
-	UserModel user = (UserModel)request.getSession().getValue(WebConstant.USER);
-	Boolean isLoggedIn = false;	
-	if (user != null)
-	{
-		isLoggedIn = true;
-	}
-%>
-
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
 	<div class="container-fluid">
