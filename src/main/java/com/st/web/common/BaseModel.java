@@ -1,5 +1,7 @@
 package com.st.web.common;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.jfinal.log.Logger;
@@ -13,6 +15,8 @@ public class BaseModel<M extends BaseModel> extends Model<M>
 {
 	private static final long	serialVersionUID	= 1L;
 
+	private static SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+	
 	protected Logger			logger				= Logger.getLogger(this.getClass());
 
 	@Override
@@ -64,28 +68,38 @@ public class BaseModel<M extends BaseModel> extends Model<M>
 	}
 
 	// common attribute
-	public int getId()
+	public Integer getId()
 	{
 		return this.getInt("id");
 	}
 	
-	public String getCreateBy()
+	public Integer getCreateBy()
 	{
-		return this.getStr(ISuperColumn.create_by);
+		return this.getInt(ISuperColumn.create_by);
 	}
 
-	public String getCeationDate()
+	public String getFormattedCeationDate()
 	{
-		return this.getStr(ISuperColumn.creation_date);
+		Timestamp time = this.getTimestamp(ISuperColumn.creation_date);
+		if (time != null)
+		{
+			return format.format(time);
+		}
+		return "";
 	}
 
-	public String getLastUpdateBy()
+	public Integer getLastUpdateBy()
 	{
-		return this.getStr(ISuperColumn.last_update_by);
+		return this.getInt(ISuperColumn.last_update_by);
 	}
 
-	public String getLastUpdateDate()
+	public String getFormattedLastUpdateDate()
 	{
-		return this.getStr(ISuperColumn.last_update_date);
+		Timestamp time = this.getTimestamp(ISuperColumn.last_update_date);
+		if (time != null)
+		{
+			return format.format(time);
+		}
+		return ""; 
 	}
 }

@@ -64,12 +64,14 @@
 				}
 				else
 				{					
+					String createBy = post.getUserName()==null?"":post.getUserName()+"";
+					String creationDate = post.getFormattedCeationDate()==null?"":post.getFormattedCeationDate().toString();
 				%>
 					<div class="post-preview">
 						<h2 class="post-title"><%=post.getTitle() %></h2>	
-						<p class="post-meta"><%= post.getContent() %></p>
+						<h3 class="post-meta"><%= post.getContent() %></h3>
 						<p class="post-meta">
-							Posted by <a href="#"><%=post.getCreateBy()%></a> on <%=post.getCreateBy() %>
+							Posted by <%=createBy%> on <%=creationDate %>
 						</p>
 					</div>
 					<input type="hidden" id="id" value="<%=post.getId() %>" />

@@ -16,7 +16,7 @@ public class UserModel extends BaseModel<UserModel> implements IUserColumn
 	 * 
 	 * @throws exception if password is not matched.
 	 */
-	public void verifiedByNameAndPassword()
+	public UserModel verifiedByNameAndPassword()
 	{
 		if (JFinal.me().getConstants().getDevMode() == true)
 		{
@@ -30,6 +30,8 @@ public class UserModel extends BaseModel<UserModel> implements IUserColumn
 		{
 			throw new RuntimeException("User name or password is not matched!");
 		}
+		
+		return user;
 	}
 
 	public void injectUserByUserName()

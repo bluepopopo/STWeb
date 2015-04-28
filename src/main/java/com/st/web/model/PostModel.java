@@ -24,7 +24,7 @@ public class PostModel extends BaseModel<PostModel> implements IPostColumn
 	
 	public static PostModel dao = new PostModel();
 	
-	private String sqlText = "select p.*, u.user_name from "+DBConstants.TABLE_POST
+	private String sqlText = "select p.*, strip_tags(content) as no_tag_content, u.user_name from "+DBConstants.TABLE_POST
 						   +" p left join "+DBConstants.TABLE_USER+" u on p.create_by= u.id";
 				 
 	
@@ -46,6 +46,19 @@ public class PostModel extends BaseModel<PostModel> implements IPostColumn
 	public String getContent()
 	{
 		return this.getStr(content);
+	}
+	/**
+	 * 
+	 * @return creation user name
+	 */
+	public String getUserName()
+	{
+		return this.getStr("user_name");
+	}
+	
+	public String getNoTagContent()
+	{
+		return this.getStr("no_tag_content");
 	}
 	
 	/**

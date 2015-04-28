@@ -7,7 +7,6 @@
 import com.st.web.common.BaseController;
 import com.st.web.common.WebConstant;
 import com.st.web.model.UserModel;
-import com.st.web.util.ThreadLocalHelper;
 
 /**
  * <p>
@@ -23,9 +22,8 @@ public class UserController extends BaseController
 	public void login()
 	{
 		UserModel user = this.getModel(UserModel.class);
-		user.verifiedByNameAndPassword();
 		// store the user object into session
-		this.getSession().setAttribute(WebConstant.USER, user);
+		this.getSession().setAttribute(WebConstant.USER, user.verifiedByNameAndPassword());
 		
 		this.renderJsp("/WEB-INF/jsp/index.jsp");
 	}

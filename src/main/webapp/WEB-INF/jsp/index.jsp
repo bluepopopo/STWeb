@@ -53,21 +53,23 @@
 				{
 					for (PostModel post : allPosts)
 					{
+						String createBy = post.getUserName()==null?"":post.getUserName()+"";
+						String creationDate = post.getFormattedCeationDate()==null?"":post.getFormattedCeationDate().toString();
 				%>
 					<div class="post-preview">
 						<a href="<%=webContextPath%>/post/getOnePost?id=<%=post.getId()%>">
 							<h2 class="post-title"><%=post.getTitle() %></h2>
 						
 						
-						<% if(post.getContent().length() > 50) { %>		
-							<h3 class="post-meta"><%= post.getContent().substring(0, 50) %></h3>				
+						<% if(post.getNoTagContent().length() > 50) { %>		
+							<h3 class="post-meta"><%= post.getNoTagContent().substring(0, 50) %></h3>				
 						<%} else {%>
-							<h3 class="post-meta"><%= post.getContent() %></h3>							
+							<h3 class="post-meta"><%= post.getNoTagContent() %></h3>							
 						<%} %>
 						</a>
 						
 						<p class="post-meta">
-							Posted by <%=post.getCreateBy()%> on <%=post.getCreateBy() %>
+							Posted by <%=createBy%> on <%=creationDate %>
 						</p>
 					</div>
 					<hr>					
