@@ -25,7 +25,7 @@
 		<dependency>
 			<groupId>com.jfinal</groupId>
 			<artifactId>jetty-server</artifactId>
-			<version>8.1.8</version>
+			<version>2018.9</version>
 			<scope>provided</scope>
 		</dependency>
 
